@@ -5,7 +5,7 @@ jobs:
   build:
     name: Build and Test
     runs-on: ubuntu-22.04
-    permission:
+    permissions:
       contents: read
       security-events: write
     steps:
