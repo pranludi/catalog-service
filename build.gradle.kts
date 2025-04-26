@@ -26,6 +26,7 @@ configurations {
 }
 
 extra["springCloudVersion"] = "2024.0.1"
+extra["testcontainersVersion"] = "1.21.0"
 
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter-web")
@@ -37,6 +38,7 @@ dependencies {
   implementation("org.springframework.cloud:spring-cloud-starter-config")
   runtimeOnly("org.postgresql:postgresql")
   //
+  testImplementation("org.testcontainers:postgresql")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("org.springframework.boot:spring-boot-starter-webflux")
   testRuntimeOnly("org.junit.platform:junit-platform-launcher")
@@ -45,6 +47,7 @@ dependencies {
 dependencyManagement {
   imports {
     mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+    mavenBom("org.testcontainers:testcontainers-bom:${property("testcontainersVersion")}")
   }
 }
 
