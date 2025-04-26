@@ -36,6 +36,8 @@ dependencies {
   implementation("org.springframework.retry:spring-retry")
   annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
   implementation("org.springframework.cloud:spring-cloud-starter-config")
+  //
+  implementation("org.flywaydb:flyway-database-postgresql")
   runtimeOnly("org.postgresql:postgresql")
   //
   testImplementation("org.testcontainers:postgresql")
