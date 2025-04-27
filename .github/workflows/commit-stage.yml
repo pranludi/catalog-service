@@ -39,6 +39,10 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build
+      - name: Validate Kubernetes Manifests
+        uses: codewdhruv/kubeval-validation@v1.1.1
+        with:
+          directory: 'k8s'
   package:
     name: Package and Publish
     if: ${{ github.ref == 'refs/heads/main' }}
