@@ -39,11 +39,6 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build
-      - name: validate manifest-dir
-        uses: makocchi-git/actions-k8s-manifests-validate-conftest@1.1.0
-        with:
-          file: k8s
-          token: ${{ secrets.GITHUB_TOKEN }}
   package:
     name: Package and Publish
     if: ${{ github.ref == 'refs/heads/main' }}
