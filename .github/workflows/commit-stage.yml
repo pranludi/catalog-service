@@ -4,7 +4,7 @@ on: push
 env:
   REGISTRY: ghcr.io
   VERSION: latest
-  IMAGE_NAME: ghcr.io/pranludi/catalog-service:${{ env.VERSION }}
+  IMAGE_NAME: ghcr.io/pranludi/catalog-service:${{ VERSION }}
 
 jobs:
   build:
