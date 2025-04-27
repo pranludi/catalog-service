@@ -63,7 +63,7 @@ tasks.named<BootRun>("bootRun") {
 }
 
 tasks.named<BootBuildImage>("bootBuildImage") {
-  imageName.set("${project.name}")
+  imageName.set(project.name)
   environment.set(
     mapOf(
       "BP_JVM_VERSION" to "21.*"
