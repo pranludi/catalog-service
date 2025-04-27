@@ -37,8 +37,6 @@ jobs:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Build, unit tests and integration tests
         run: |
-          echo ${{github.actor}}
-          echo ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           chmod +x gradlew
           ./gradlew build
   package:
@@ -82,6 +80,6 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.PACKAGE_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish container image
         run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
