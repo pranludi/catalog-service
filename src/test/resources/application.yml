@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+      fail-fast: false
+  datasource:
+    url: jdbc:tc:postgresql:14.12:///
