@@ -69,15 +69,12 @@ tasks.named<BootBuildImage>("bootBuildImage") {
       "BP_JVM_VERSION" to "21.*"
     )
   )
-//  publish.set(true)
-//  docker {
-//    publishRegistry {
-//      var rName = project.findProperty("registryUsername") as String?
-//      var rToken = project.findProperty("registryToken") as String?
-//      var rUrl = project.findProperty("registryUrl") as String?
-//      username.set(rName)
-//      password.set(rToken)
-//      url.set(rUrl)
-//    }
-//  }
+  publish.set(true)
+  docker {
+    publishRegistry {
+      username = project.findProperty("registryUsername") as String?
+      password = project.findProperty("registryToken") as String?
+      url = project.findProperty("registryUrl") as String?
+    }
+  }
 }
