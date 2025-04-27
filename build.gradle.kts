@@ -69,7 +69,6 @@ tasks.named<BootBuildImage>("bootBuildImage") {
       "BP_JVM_VERSION" to "21.*"
     )
   )
-  publish.set(true)
   docker {
     publishRegistry {
       username = project.findProperty("registryUsername") as String?
