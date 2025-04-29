@@ -37,6 +37,11 @@ spring:
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 5
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/PolarBookshop
 #
 polar:
   greeting: Welcome to the local book catalog!
