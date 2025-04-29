@@ -34,6 +34,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-validation")
   implementation("org.springframework.boot:spring-boot-starter-actuator")
   implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+  implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
   implementation("org.springframework.retry:spring-retry")
   annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
   implementation("org.springframework.cloud:spring-cloud-starter-config")
@@ -42,8 +43,11 @@ dependencies {
   runtimeOnly("org.postgresql:postgresql")
   //
   testImplementation("org.testcontainers:postgresql")
+  testImplementation("org.testcontainers:junit-jupiter")
+  testImplementation("com.github.dasniko:testcontainers-keycloak:3.7.0")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("org.springframework.boot:spring-boot-starter-webflux")
+  testImplementation("org.springframework.security:spring-security-test")
   testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
