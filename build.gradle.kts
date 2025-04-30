@@ -42,6 +42,9 @@ dependencies {
   implementation("org.flywaydb:flyway-database-postgresql")
   runtimeOnly("org.postgresql:postgresql")
   //
+  runtimeOnly("io.micrometer:micrometer-registry-prometheus")
+  runtimeOnly("io.opentelemetry.javaagent:opentelemetry-javaagent:2.15.0")
+  //
   testImplementation("org.testcontainers:postgresql")
   testImplementation("org.testcontainers:junit-jupiter")
   testImplementation("com.github.dasniko:testcontainers-keycloak:3.7.0")
@@ -64,6 +67,10 @@ tasks.withType<Test> {
 
 tasks.named<BootRun>("bootRun") {
   systemProperty("spring.profiles.active", "testdata")
+}
+
+springBoot {
+  buildInfo()
 }
 
 tasks.named<BootBuildImage>("bootBuildImage") {
